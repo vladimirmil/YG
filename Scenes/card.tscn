@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://clpvoeo2p5tpc"]
+
+[ext_resource type="Script" path="res://Scripts/card.gd" id="1_yw2so"]
+[ext_resource type="Texture2D" uid="uid://wqcnv6fbjddb" path="res://Images/back.png" id="2_hj7io"]
+[ext_resource type="Texture2D" uid="uid://xo0uhuqo2kyn" path="res://Images/Frame/normal.png" id="2_syn74"]
+[ext_resource type="Texture2D" uid="uid://dadm3bve0ngj4" path="res://Images/Artwork/89631139.jpg" id="4_o1o80"]
+[ext_resource type="Texture2D" uid="uid://dudae37iyvs7a" path="res://Images/level.png" id="5_hqkl7"]
+[ext_resource type="FontFile" uid="uid://ct05kkaveup01" path="res://Font/Matrix Regular Small Caps.otf" id="7_ggmlv"]
+[ext_resource type="Texture2D" uid="uid://cisu7mmboar7h" path="res://Images/Attribute/LIGHT.png" id="7_vrte5"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 123.0
+offset_bottom = 181.0
+script = ExtResource("1_yw2so")
+
+[node name="Back" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 181.0
+texture = ExtResource("2_hj7io")
+expand_mode = 1
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 181.0
+texture = ExtResource("2_syn74")
+expand_mode = 1
+
+[node name="kazuki" type="Label" parent="Frame"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 173.0
+offset_right = 114.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ggmlv")
+theme_override_font_sizes/font_size = 4
+text = "1996 KAZUKI TAKAHASHI"
+
+[node name="Name" type="Label" parent="Frame"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 102.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ggmlv")
+theme_override_font_sizes/font_size = 10
+text = "Blue-Eyes White Dragon"
+vertical_alignment = 1
+
+[node name="Art" type="TextureRect" parent="Frame"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 33.0
+offset_right = 109.0
+offset_bottom = 128.0
+texture = ExtResource("4_o1o80")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Attribute" type="TextureRect" parent="Frame"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 115.0
+offset_bottom = 19.0
+texture = ExtResource("7_vrte5")
+expand_mode = 1
+
+[node name="Monster" type="Control" parent="Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Atk" type="Label" parent="Frame/Monster"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 165.0
+offset_right = 85.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ggmlv")
+theme_override_font_sizes/font_size = 6
+text = "ATK/3000"
+vertical_alignment = 1
+
+[node name="Def" type="Label" parent="Frame/Monster"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 165.0
+offset_right = 110.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ggmlv")
+theme_override_font_sizes/font_size = 6
+text = "DEF/2500"
+
+[node name="Race" type="Label" parent="Frame/Monster"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 137.0
+offset_right = 33.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ggmlv")
+theme_override_font_sizes/font_size = 6
+text = "[ Dragon ]"
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Frame/Monster"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 142.0
+offset_right = 113.0
+offset_bottom = 164.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+theme_override_fonts/normal_font = ExtResource("7_ggmlv")
+theme_override_font_sizes/normal_font_size = 4
+text = "Dsgdsgadsfpjaskfjasfakskasjfkljafkajsfčkasjfčkdsgdsgadsfpdsgdsgadsfpjaskfjasfafakskasjfkljafkajsfčkasjfčk"
+scroll_active = false
+
+[node name="Level" type="Sprite2D" parent="Frame/Monster"]
+position = Vector2(61, 25.5)
+scale = Vector2(0.15758, 0.15758)
+texture = ExtResource("5_hqkl7")
+vframes = 12
+frame = 4
+
+[node name="SpellTrap" type="Control" parent="Frame"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Description" type="RichTextLabel" parent="Frame/SpellTrap"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 137.0
+offset_right = 113.0
+offset_bottom = 164.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+theme_override_fonts/normal_font = ExtResource("7_ggmlv")
+theme_override_font_sizes/normal_font_size = 4
+text = "Dsgdsgadsfpjaskfjasfakskasjfkljafkajsfčkasjfčkdsgdsgadsfpdsgdsgadsfpjaskfjasfafakskasjfkljafkajsfčkasjfčk"
+scroll_active = false
+
+[node name="Type" type="Label" parent="Frame/SpellTrap"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 22.0
+offset_right = 115.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ggmlv")
+theme_override_font_sizes/font_size = 6
+text = "[ SPELL CARD ]"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 181.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

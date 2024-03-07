@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://b83t6d2t7fn8t"]
+
+[ext_resource type="Script" path="res://Scripts/deck.gd" id="1_hljba"]
+[ext_resource type="FontFile" uid="uid://ct05kkaveup01" path="res://Font/Matrix Regular Small Caps.otf" id="2_dde3e"]
+
+[node name="Deck" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 133.0
+offset_bottom = 215.0
+script = ExtResource("1_hljba")
+metadata/_edit_horizontal_guides_ = [215.0]
+
+[node name="Back" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 133.0
+offset_bottom = 191.0
+
+[node name="ColorRect" type="ColorRect" parent="Back"]
+layout_mode = 0
+offset_right = 133.0
+offset_bottom = 191.0
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Cards" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 133.0
+offset_bottom = 191.0
+
+[node name="NumberOfCards" type="Label" parent="."]
+layout_mode = 0
+offset_top = 193.0
+offset_right = 133.0
+offset_bottom = 215.0
+theme_override_fonts/font = ExtResource("2_dde3e")
+theme_override_font_sizes/font_size = 24
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
