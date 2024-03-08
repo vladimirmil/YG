@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyutcgeo5bthx"]
+[gd_scene load_steps=4 format=3 uid="uid://dyutcgeo5bthx"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_pvycw"]
+[ext_resource type="PackedScene" uid="uid://c2yx000kdewaj" path="res://Scenes/hand.tscn" id="2_d42xb"]
 [ext_resource type="PackedScene" uid="uid://b83t6d2t7fn8t" path="res://Scenes/deck.tscn" id="2_mqdyy"]
 
 [node name="Main" type="Control"]
@@ -12,18 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pvycw")
 
-[node name="Hand" type="Control" parent="."]
+[node name="Hand" parent="." instance=ExtResource("2_d42xb")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -519.0
-offset_top = -240.0
-offset_right = 519.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 540.0
+offset_top = 935.0
+offset_right = 943.0
+offset_bottom = 1175.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Node2D" type="Node2D" parent="."]
 

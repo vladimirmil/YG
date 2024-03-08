@@ -37,7 +37,8 @@ var data : Dictionary = {
 	"art"       : ""
 }
 
-var isShown : bool = true
+var isShown : bool = false
+var isInDeck : bool = true
 
 
 func _ready():
@@ -54,27 +55,32 @@ func SetData(_data : Dictionary) -> void:
 	var artwork : Object = null
 	var attribute : Object = null
 	var type : Object = null
+	var maxNameCharacterLength : int = 23
 	
 	# SET DATA
 	data = _data.duplicate()
 	
+	
+	if data["type"] == "spell" or data["type"] == "trap":
+		monsterControl.visible = false
+		SpellTrapControl.visible = true
+		descriptionSTLabel.text = data["desc"]
+		nameLabel.add_theme_color_override("font_color", Color(1.0,1.0,1.0,1.0))
+	
 	# SET TYPE SPECIFIC DATA
 	if data["type"] == "spell":
 		data["attribute"] = "SPELL"
-		descriptionSTLabel.text = data["desc"]
 		spellTrapLabel.text = "[ Spell Card ]"
-		monsterControl.visible = false
-		SpellTrapControl.visible = true
 	elif data["type"] == "trap":
 		data["attribute"] = "TRAP"
-		descriptionSTLabel.text = data["desc"]
 		spellTrapLabel.text = "[ Trap Card ]"
-		monsterControl.visible = false
-		SpellTrapControl.visible = true
 	else:
 		monsterControl.visible = true
 		SpellTrapControl.visible = false
-		raceLabel.text = data["race"]
+		if data["type"] == "effect":
+			raceLabel.text = "[" + data["race"] + "/Effect]"
+		else:
+			raceLabel.text = "[" + data["race"] + "]"
 		atkLabel.text = "ATK/" + str(data["atk"])
 		defLabel.text = "DEF/" + str(data["def"])
 		levelSprite.frame = levelSprite.vframes - data["level"]
@@ -90,6 +96,11 @@ func SetData(_data : Dictionary) -> void:
 	attributeSprite.texture = attribute
 	frame.texture = type
 	nameLabel.text = data["name"]
+	
+	if nameLabel.get_total_character_count() > maxNameCharacterLength:
+		nameLabel.add_theme_font_size_override("font_size", 8)
+		#nameLabel.add_theme_constant_override("theme_override_fonts/font/base_font/spacing_glyph",-2)
+
 
 
 func _on_button_pressed():
@@ -98,11 +109,15 @@ func _on_button_pressed():
 
 
 func OnMouseEntered() -> void:
-	z_index = 1
+	if !isInDeck:
+		z_index = 1
+		position.y = -20
 	#print("entered")
 
 func OnMouseExited() -> void:
-	z_index = 0
+	if !isInDeck:
+		z_index = 0
+		position.y = 0
 	#print("exited")
 
 
