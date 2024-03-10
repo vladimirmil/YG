@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://i3335mbsur1a"]
+
+[ext_resource type="Script" path="res://Scripts/field_slot.gd" id="1_4f3ma"]
+[ext_resource type="FontFile" uid="uid://ct05kkaveup01" path="res://Font/Matrix Regular Small Caps.otf" id="2_5264t"]
+
+[node name="FieldSlot" type="Control"]
+custom_minimum_size = Vector2(181, 181)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 181.0
+offset_bottom = 200.0
+script = ExtResource("1_4f3ma")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HighlightColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 0.196078)
+
+[node name="StatsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 186.0
+offset_right = 181.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("2_5264t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true

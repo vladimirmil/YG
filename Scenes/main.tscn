@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyutcgeo5bthx"]
+[gd_scene load_steps=5 format=3 uid="uid://dyutcgeo5bthx"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_pvycw"]
 [ext_resource type="PackedScene" uid="uid://c2yx000kdewaj" path="res://Scenes/hand.tscn" id="2_d42xb"]
 [ext_resource type="PackedScene" uid="uid://b83t6d2t7fn8t" path="res://Scenes/deck.tscn" id="2_mqdyy"]
+[ext_resource type="PackedScene" uid="uid://i3335mbsur1a" path="res://Scenes/field_slot.tscn" id="4_47hpo"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -12,6 +13,156 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pvycw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[node name="Field" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -509.5
+offset_top = -407.0
+offset_right = 781.5
+offset_bottom = 407.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="GridContainer" type="GridContainer" parent="Field"]
+layout_mode = 2
+theme_override_constants/v_separation = 24
+columns = 7
+
+[node name="FieldSlot" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 2
+
+[node name="FieldSlot2" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 1
+
+[node name="FieldSlot3" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 1
+
+[node name="FieldSlot4" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 1
+
+[node name="FieldSlot5" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 1
+
+[node name="FieldSlot6" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 1
+
+[node name="FieldSlot7" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 3
+
+[node name="FieldSlot8" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 5
+
+[node name="FieldSlot9" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+
+[node name="FieldSlot10" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+
+[node name="FieldSlot11" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+
+[node name="FieldSlot12" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+
+[node name="FieldSlot13" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+
+[node name="FieldSlot14" parent="Field/GridContainer" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_owner = 1
+_type = 4
+
+[node name="GridContainer2" type="GridContainer" parent="Field"]
+layout_mode = 2
+theme_override_constants/v_separation = 24
+columns = 7
+
+[node name="FieldSlot" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 5
+
+[node name="FieldSlot2" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+
+[node name="FieldSlot3" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+
+[node name="FieldSlot4" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+
+[node name="FieldSlot5" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+
+[node name="FieldSlot6" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+
+[node name="FieldSlot7" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 4
+
+[node name="FieldSlot8" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 2
+
+[node name="FieldSlot9" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 1
+
+[node name="FieldSlot10" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 1
+
+[node name="FieldSlot11" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 1
+
+[node name="FieldSlot12" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 1
+
+[node name="FieldSlot13" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 1
+
+[node name="FieldSlot14" parent="Field/GridContainer2" instance=ExtResource("4_47hpo")]
+layout_mode = 2
+_type = 3
 
 [node name="Hand" parent="." instance=ExtResource("2_d42xb")]
 layout_mode = 1
@@ -30,7 +181,23 @@ grow_vertical = 1
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Deck" parent="." instance=ExtResource("2_mqdyy")]
-offset_left = 1684.0
-offset_top = 802.0
-offset_right = 1684.0
-offset_bottom = 802.0
+offset_left = 1761.0
+offset_top = 758.0
+offset_right = 1761.0
+offset_bottom = 758.0
+
+[node name="Deck2" parent="." instance=ExtResource("2_mqdyy")]
+offset_left = 303.0
+offset_top = 131.0
+offset_right = 303.0
+offset_bottom = 131.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

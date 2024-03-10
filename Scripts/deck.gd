@@ -73,7 +73,7 @@ func SetData(a : Array) -> void:
 		cardsControl.add_child(c)
 		c.position = Vector2(i*cardSpawnOffset.x+initialSpawn.x, -i*cardSpawnOffset.y+initialSpawn.y)
 		c.SetData(data[i])
-		c.pressed.connect(OnCardPressed)
+		#c.pressed.connect(OnCardPressed)
 
 
 
@@ -109,6 +109,6 @@ func RemoveCard(i : int = 1) -> Dictionary:
 func GetSize() -> int: return data.size()-1#cardsControl.get_child_count() - 1
 
 
-
-func OnCardPressed() -> void:
-	DrawCard()
+#
+#func OnCardPressed() -> void:
+	#DrawCard()

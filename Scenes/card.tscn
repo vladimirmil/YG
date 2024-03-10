@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clpvoeo2p5tpc"]
+[gd_scene load_steps=9 format=3 uid="uid://clpvoeo2p5tpc"]
 
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_yw2so"]
 [ext_resource type="Texture2D" uid="uid://wqcnv6fbjddb" path="res://Images/back.png" id="2_hj7io"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dudae37iyvs7a" path="res://Images/level.png" id="5_hqkl7"]
 [ext_resource type="FontFile" uid="uid://ct05kkaveup01" path="res://Font/Matrix Regular Small Caps.otf" id="7_ggmlv"]
 [ext_resource type="Texture2D" uid="uid://cisu7mmboar7h" path="res://Images/Attribute/LIGHT.png" id="7_vrte5"]
+[ext_resource type="PackedScene" uid="uid://csk4d15m6mj2n" path="res://Scenes/button.tscn" id="8_8flmq"]
 
 [node name="Card" type="Control"]
 layout_mode = 3
@@ -167,10 +168,38 @@ theme_override_fonts/font = ExtResource("7_ggmlv")
 theme_override_font_sizes/font_size = 6
 text = "[ SPELL CARD ]"
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 122.0
-offset_bottom = 181.0
+[node name="Button" parent="." instance=ExtResource("8_8flmq")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+button_mask = 3
 flat = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="PopupActionPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_top = -46.0
+offset_right = 61.5
+offset_bottom = -6.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="PopupLabel" type="Label" parent="PopupActionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Summon"
+horizontal_alignment = 1
+vertical_alignment = 1
